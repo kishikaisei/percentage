@@ -26,13 +26,10 @@ function calculate() {
 
     // Display calculations
     document.getElementById('step1').textContent = 
-        `Step 1: Calculate percentage of A out of B: (${a} / ${b}) × 100 = ${percentage.toFixed(2)}%`;
-    
+        `Step 1: Percentage of downgraded leg out of full fligth: (${a} / ${b}) × 100 = ${percentage.toFixed(2)}%`;
+
     document.getElementById('step2').textContent = 
-        `Step 2: Convert percentage to decimal: ${percentage.toFixed(2)}% = ${(percentage / 100).toFixed(4)}`;
-    
-    document.getElementById('step3').textContent = 
-        `Step 3: Apply to Field C: ${(percentage / 100).toFixed(4)} × ${c} = ${result.toFixed(2)}`;
+        `Step 2: Apply percentage on the total Miles: ${(percentage / 100).toFixed(4)} × ${c} = ${result.toFixed(2)}`;
     
     document.getElementById('finalResult').textContent = result.toFixed(2);
 

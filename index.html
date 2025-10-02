@@ -4,138 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Percentage Calculator</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 28px;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            color: #555;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        input:invalid {
-            border-color: #ff6b6b;
-        }
-
-        .results {
-            margin-top: 30px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            display: none;
-        }
-
-        .results.show {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .calculation-step {
-            margin-bottom: 12px;
-            color: #666;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .final-result {
-            margin-top: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .result-label {
-            font-size: 14px;
-            font-weight: normal;
-            opacity: 0.9;
-            margin-bottom: 5px;
-        }
-    </style>
+    <title>Miles Percentage Calculator</title>
+    <meta name="description" content="Quick Maffs for downgraded trip">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Percentage Calculator</h1>
+        <h1>Miles Percentage Calculator</h1>
         
         <div class="input-group">
-            <label for="fieldA">Field A (Part)</label>
+            <label for="fieldA">Distance of segment downgraded</label>
             <input type="number" id="fieldA" placeholder="Enter an integer" step="1">
         </div>
 
         <div class="input-group">
-            <label for="fieldB">Field B (Total)</label>
+            <label for="fieldB">Total Distance of flight</label>
             <input type="number" id="fieldB" placeholder="Enter an integer" step="1">
         </div>
 
         <div class="input-group">
-            <label for="fieldC">Field C (Apply percentage to)</label>
+            <label for="fieldC">Total Miles for downgraded segment</label>
             <input type="number" id="fieldC" placeholder="Enter an integer" step="1">
         </div>
 
@@ -149,52 +37,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const fieldA = document.getElementById('fieldA');
-        const fieldB = document.getElementById('fieldB');
-        const fieldC = document.getElementById('fieldC');
-        const results = document.getElementById('results');
-
-        function calculate() {
-            const a = parseInt(fieldA.value);
-            const b = parseInt(fieldB.value);
-            const c = parseInt(fieldC.value);
-
-            if (isNaN(a) || isNaN(b) || isNaN(c)) {
-                results.classList.remove('show');
-                return;
-            }
-
-            if (b === 0) {
-                results.classList.remove('show');
-                return;
-            }
-
-            // Step 1: Calculate percentage
-            const percentage = (a / b) * 100;
-
-            // Step 2: Apply percentage to field C
-            const result = (percentage / 100) * c;
-
-            // Display calculations
-            document.getElementById('step1').textContent = 
-                `Step 1: Calculate percentage of A out of B: (${a} / ${b}) × 100 = ${percentage.toFixed(2)}%`;
-            
-            document.getElementById('step2').textContent = 
-                `Step 2: Convert percentage to decimal: ${percentage.toFixed(2)}% = ${(percentage / 100).toFixed(4)}`;
-            
-            document.getElementById('step3').textContent = 
-                `Step 3: Apply to Field C: ${(percentage / 100).toFixed(4)} × ${c} = ${result.toFixed(2)}`;
-            
-            document.getElementById('finalResult').textContent = result.toFixed(2);
-
-            results.classList.add('show');
-        }
-
-        fieldA.addEventListener('input', calculate);
-        fieldB.addEventListener('input', calculate);
-        fieldC.addEventListener('input', calculate);
-    </script>
+    <script src="code.js" async defer></script>
 </body>
 </html>

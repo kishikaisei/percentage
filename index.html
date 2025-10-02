@@ -27,13 +27,16 @@
             <input type="number" id="fieldC" placeholder="Enter an integer" step="1">
         </div>
 
+        <div class="input-group">
+            <label for="multiplier">Percentage of refund rate</label>
+            <select id="multiplier">
+                <option value="0.30">30%</option>
+                <option value="0.50">50%</option>
+                <option value="0.75">75%</option>
+            </select>
+        </div>
+
         <div class="results" id="results">
-            <div class="calculation-step" id="step1"></div>
-            <div class="calculation-step" id="step2"></div>
-            <div class="final-result">
-                <div class="result-label">Final Result</div>
-                <div id="finalResult"></div>
-            </div>
         </div>
     </div>
     <script src="code.js" async defer></script>

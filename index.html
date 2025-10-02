@@ -14,21 +14,91 @@
         
         <div class="input-group">
             <label for="fieldA">Distance of segment downgraded</label>
-            <input type="number" id="fieldA" placeholder="Enter an integer" step="1">
+            <input type="number" id="fieldA" placeholder="Enter the segment distance" step="1">
         </div>
 
         <div class="input-group">
             <label for="fieldB">Total Distance of flight</label>
-            <input type="number" id="fieldB" placeholder="Enter an integer" step="1">
+            <input type="number" id="fieldB" placeholder="Enter the trip distance" step="1">
         </div>
 
         <div class="input-group">
             <label for="fieldC">Total Miles for downgraded segment</label>
-            <input type="number" id="fieldC" placeholder="Enter an integer" step="1">
+            <input type="number" id="fieldC" placeholder="Enter the miles paid" step="1">
         </div>
 
         <div class="input-group">
-            <label for="multiplier">Percentage of refund rate</label>
+            <label for="multiplier">
+                <span class="label-with-info">
+                    Percentage of refund rate
+                    <span class="info-icon">
+                        i
+                        <span class="tooltip">
+
+
+
+
+
+                            
+<div class="tooltip-table">
+  <div class="row header">
+    <div class="cell zone">Zone</div>
+    <div class="cell routes">Routes</div>
+    <div class="cell refund">Refund Rate</div>
+  </div>
+
+  <div class="row">
+    <div class="cell zone">1</div>
+    <div class="cell routes">
+      • Flights until 1,500 km (or 932 miles)<br>
+      • Flights between Fort de France (FDF) and Cayenne (CAY)<br>
+      • Flights between Fort de France (FDF) and Pointe à Pitre (PTP)
+    </div>
+    <div class="cell refund">
+      <strong>30%</strong><br>of the price of the segment
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="cell zone">2</div>
+    <div class="cell routes">
+      • Flights between 1,501 and 3,500 km (or between 932 miles and 2175 miles)<br>
+      • Flights operated by Delta Air Lines within the USA<br>
+      • Flights between Paris and Pointe à Pitre (PTP)<br>
+      • Flights between Paris and Cayenne (CAY)<br>
+      • Flights between Paris and Port au Prince (PAP)<br>
+      • Flights between Paris and Fort de France (FDF)<br>
+      • Flights between Paris and Réunion (RUN)
+    </div>
+    <div class="cell refund">
+      <strong>50%</strong><br>of the price of the segment
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="cell zone">3</div>
+    <div class="cell routes">
+      • Flights above 3,501 km (or 2175 miles)<br>
+      • Flights between Paris and Papeete (PPT)<br>
+      • Flights between Paris and Saint Maarten (SXM)
+    </div>
+    <div class="cell refund">
+      <strong>75%</strong><br>of the price of the segment
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+                        </span>
+                    </span>
+                </span>
+            </label>
             <select id="multiplier">
                 <option value="0.30">30%</option>
                 <option value="0.50">50%</option>

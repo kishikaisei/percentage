@@ -33,19 +33,19 @@ function calculate() {
     // Display calculations
     const step1 = document.createElement('div');
     step1.className = 'calculation-step';
-    step1.textContent = `Step 1: Percentage of downgraded leg out of full fligth: (${a} / ${b}) × 100 = ${percentage}%`;
+    step1.textContent = `Step 2: Percentage of downgraded leg out of full fligth: (${a} / ${b}) × 100 = ${percentage}%`;
 
     const step2 = document.createElement('div');
     step2.className = 'calculation-step';
-    step2.textContent = `Step 2: Apply percentage on the total Miles: ${percentage} × ${c} = ${intermediateResult}`;
+    step2.textContent = `Step 2: Apply percentage on the total Miles: ${percentage}% of ${c} = ${intermediateResult.toFixed(2)}`;
 
     const step3 = document.createElement('div');
     step3.className = 'calculation-step';
-    step3.textContent = `Step 3: Apply refund rate: ${multPercentage}% of ${intermediateResult} = ${finalResult.toFixed(2)}`;
+    step3.textContent = `Step 3: Apply refund rate: ${intermediateResult} × ${multPercentage}% = ${finalResult}`;
     
     const finalDiv = document.createElement('div');
     finalDiv.className = 'final-result';
-    finalDiv.innerHTML = `<div class="result-label">Final Result</div><div>${finalResult.toFixed(2)}</div>`;
+    finalDiv.innerHTML = `<div class="result-label">Final Result</div><div>${finalResult}</div>`;
 
     results.innerHTML = '';
     results.appendChild(step1);

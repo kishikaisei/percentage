@@ -40,6 +40,63 @@ label {
     font-weight: 600;
     margin-bottom: 8px;
     font-size: 14px;
+    position: relative;
+}
+
+.label-with-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #667eea;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: help;
+    position: relative;
+}
+
+.info-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: black;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: normal;
+    width: 750px;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
 }
 
 input {
@@ -126,4 +183,30 @@ select:focus {
     font-weight: normal;
     opacity: 0.9;
     margin-bottom: 5px;
+}
+
+
+.tooltip-table {
+  display: grid;
+  grid-template-columns: 60px 1fr 150px;
+  gap: 8px;
+  font-size: 12px;
+
+  border: 1px solid #ccc;
+  padding: 8px;
+  max-width: 750px;
+}
+
+.row {
+  display: contents;
+}
+
+.cell {
+  padding: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.header .cell {
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
 }

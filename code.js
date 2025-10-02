@@ -31,7 +31,7 @@ function calculate() {
     document.getElementById('step2').textContent = 
         `Step 2: Apply percentage on the total Miles: ${percentage.toFixed(2)}% of ${c} = ${result.toFixed(2)}`;
     
-    document.getElementById('finalResult').textContent = result.toFixed(2);
+    document.getElementById('finalResult').textContent = Math.ceil(result.toFixed(2));
 
     results.classList.add('show');
 }

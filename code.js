@@ -29,7 +29,7 @@ function calculate() {
         `Step 1: Percentage of downgraded leg out of full fligth: (${a} / ${b}) × 100 = ${percentage.toFixed(2)}%`;
 
     document.getElementById('step2').textContent = 
-        `Step 2: Apply percentage on the total Miles: ${(percentage / 100).toFixed(4)} × ${c} = ${result.toFixed(2)}`;
+        `Step 2: Apply percentage on the total Miles: ${percentage.toFixed(2)}% of ${c} = ${result.toFixed(2)}`;
     
     document.getElementById('finalResult').textContent = result.toFixed(2);
 
